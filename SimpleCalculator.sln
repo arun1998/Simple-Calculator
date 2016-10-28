@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
@@ -26,3 +27,33 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator", "SimpleCalculator\SimpleCalculator.csproj", "{778D0989-3396-43B9-BC27-D6CB6BF0D9C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.Tests", "SimpleCalculator.Tests\SimpleCalculator.Tests.csproj", "{1D4686AE-9BD5-41A0-8FC9-68C458C985C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{778D0989-3396-43B9-BC27-D6CB6BF0D9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778D0989-3396-43B9-BC27-D6CB6BF0D9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778D0989-3396-43B9-BC27-D6CB6BF0D9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778D0989-3396-43B9-BC27-D6CB6BF0D9C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D4686AE-9BD5-41A0-8FC9-68C458C985C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4686AE-9BD5-41A0-8FC9-68C458C985C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D4686AE-9BD5-41A0-8FC9-68C458C985C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D4686AE-9BD5-41A0-8FC9-68C458C985C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+>>>>>>> 6d8768ddd58d382798f83c27f70f4340323c97d5
