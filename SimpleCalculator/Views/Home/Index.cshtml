@@ -1,0 +1,206 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js" ></script>
+<script type="text/javascript" >
+    $(document).ready(function () {
+        var iDec = 0;
+        $('.num').click(function () {
+            //if ($('#hfAction').val() == "") {
+            if ($(this).val() == ".") {
+                if (iDec == 0)
+                {
+                    var value = $('#txtNumber').val() + $(this).val();
+                    $('#txtNumber').val(value);
+                    iDec = 1;
+                }
+            }
+            else {
+                var value = $('#txtNumber').val() + $(this).val();
+                $('#txtNumber').val(value);
+            }
+                
+        });
+
+        $('#btnClear').click(function () {
+            $('#hfValue').val("");
+            $('#txtNumber').val("");
+            $('#hfAction').val("");
+            iDec = 0;
+        });
+
+        $('#btnCalc').click(function () {
+            var val = $('#txtNumber').val();
+            var value;
+            if (val != "") {
+                //alert($('#hfAction2').val());
+                if ($('#hfAction').val() == "+") {
+                    value = parseFloat($('#hfValue').val()) + parseFloat($('#txtNumber').val());
+                }
+                else if ($('#hfAction').val() == "-") {
+                    value = parseFloat($('#hfValue').val()) - parseFloat($('#txtNumber').val());
+                }
+                else if ($('#hfAction').val() == "*") {
+                    value = parseFloat($('#hfValue').val()) * parseFloat($('#txtNumber').val());
+                }
+                else if ($('#hfAction').val() == "/") {
+                    value = parseFloat($('#hfValue').val()) / parseFloat($('#txtNumber').val());
+                }
+            }
+            else
+                value = $('#hfValue').val();
+
+            $('#hfValue').val("");
+            $('#txtNumber').val("");
+            $('#hfAction').val("");
+            $('#hfAction2').val("");
+            iDec = 0;
+            $('#txtNumber').val(value);
+        });
+
+        $('.act').click(function () {
+            var value = $(this).val();
+            var xtVal;
+            var result;
+            xtVal = $('#txtNumber').val();
+            if (xtVal != "") {            
+                if ($('#hfAction').val() == "") {
+                    $('#hfAction').val(value);
+                    xtVal = $('#txtNumber').val();
+                    //alert(xtVal);
+                    $('#hfValue').val(xtVal);
+                    $('#txtNumber').val("");
+                
+                }
+                else {
+                    if (value == "+") {
+                        //if ($('hfValue').val() == "")
+                        if ($('#hfAction').val() == "+")
+                        {
+                            result = parseFloat($('#hfValue').val()) + parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "-")
+                        {
+                            result = parseFloat($('#hfValue').val()) - parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "*") {
+                            result = parseFloat($('#hfValue').val()) * parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "/") {
+                            result = parseFloat($('#hfValue').val()) / parseFloat($('#txtNumber').val());
+                        }
+                        //alert(result);
+                        //$('#hfValue').val(result);
+                        //$('#txtNumber').val(result);
+
+                    }
+                    else if (value == "-") {
+                        if ($('#hfAction').val() == "+") {
+                            result = parseFloat($('#hfValue').val()) + parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "-") {
+                            result = parseFloat($('#hfValue').val()) - parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "*") {
+                            result = parseFloat($('#hfValue').val()) * parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "/") {
+                            result = parseFloat($('#hfValue').val()) / parseFloat($('#txtNumber').val());
+                        }
+                        //alert(result);
+                    }
+                    else if (value == "*") {
+                        if ($('#hfAction').val() == "+") {
+                            result = parseFloat($('#hfValue').val()) + parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "-") {
+                            result = parseFloat($('#hfValue').val()) - parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "*") {
+                            result = parseFloat($('#hfValue').val()) * parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "/") {
+                            result = parseFloat($('#hfValue').val()) / parseFloat($('#txtNumber').val());
+                        }
+
+                    }
+                    else if (value == "/") {
+                        if ($('#hfAction').val() == "+") {
+                            result = parseFloat($('#hfValue').val()) + parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "-") {
+                            result = parseFloat($('#hfValue').val()) - parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "*") {
+                            result = parseFloat($('#hfValue').val()) * parseFloat($('#txtNumber').val());
+                        }
+                        else if ($('#hfAction').val() == "/") {
+                            result = parseFloat($('#hfValue').val()) / parseFloat($('#txtNumber').val());
+                        }
+
+                    }
+                    $('#hfValue').val(result);
+                    $('#txtNumber').val("");
+                
+                }
+                $('#hfAction').val(value);
+                iDec = 0;
+
+            }
+        });
+
+    })
+
+</script>
+
+<br/><br /><br />
+<h2>My Simple Calculator</h2>
+<hr/>
+
+<div class="row">
+    <div class="col-md-3">
+        &nbsp;
+    </div>
+    <div class="col-md-6">
+        <table style="width:100%; border-style:solid; border-width:1px">
+            <tr style="width:100%">
+                <td colspan="5" style="width:100%">
+                    <input type="text" id="txtNumber" style="text-align:right" readonly="readonly" class="col-lg-12"/>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btn7"  value="7" class="num" style="width:90%" /></td>
+                <td><input type="button" id="btn8" value="8" class="num" style="width:90%" /></td>
+                <td><input type="button" id="btn9" value="9" class="num" style="width:90%"/></td>
+                <td><input type="button" id="btnDiv" value="/" class="act" style="width:90%" /></td>
+                <td rowspan="2"><input type="button" id="btnClear" value="AC" style="width:90%; height:90%" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btn4" value="4" class="num" style="width:90%" /></td>
+                <td><input type="button" id="btn5" value="5" class="num" style="width:90%"/></td>
+                <td><input type="button" id="btn6" value="6" class="num" style="width:90%"/></td>
+                <td><input type="button" id="btnMult" value="*" class="act" style="width:90%" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btn1" value="1" class="num" style="width:90%"/></td>
+                <td><input type="button" id="btn2" value="2" class="num" style="width:90%"/></td>
+                <td><input type="button" id="btn3" value="3" class="num" style="width:90%" /></td>
+                <td><input type="button" id="btnSub" value="-" class="act" style="width:90%"/></td>
+                <td rowspan="2"><input type="button" id="btnCalc" value="=" style="width:90%; height:90%" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" id="btn0" value="0" class="num" style="width:90%"/></td>
+                <td><input type="button" id="btnPeriod" value="." class="num" style="width:90%"/></td>
+                <td><input type="button" id="btnAdd" value="+" class="act" style="width:90%" /></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <input type="hidden" id="hfValue" />
+        <input type="hidden" id="hfAction" />
+        <input type="hidden" id="hfAction2" />
+        <input type="hidden" id="hfTotal" />
+        &nbsp;
+    </div>
+</div>
